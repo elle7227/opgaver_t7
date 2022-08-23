@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<img id="cola" src="cola.jpg" alt="cola"> 
+<img id="fanta" src="fanta.jpg" alt="fanta"> 
+<img id="øl" src="oel.jpg" alt="øl"> 
+<img id="snaps" src="snaps.jpg" alt="snaps"> 
+
+
+    
+<script>
+document.querySelector("#cola");
+document.querySelector("#fanta");
+document.querySelector("#øl");
+document.querySelector("#snaps");
+
+document.querySelector("#cola").addEventListener("click",funktionDerKaldesVedKlik);
+document.querySelector("#fanta").addEventListener("click",funktionDerKaldesVedKlik);
+document.querySelector("#øl").addEventListener("click",funktionDerKaldesVedKlik);
+document.querySelector("#snaps").addEventListener("click",funktionDerKaldesVedKlik);
+
+function funktionDerKaldesVedKlik(){
+    console.log(this.alt);
+
+    if (this.alt == "snaps" || this.alt == "øl"){
+        console.log("alkohol");   
+    }
+    else { console.log ("inge alkohol");}
+}
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=¨, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>gæt et tal</h1>
+    <p>skriv et tal mellem 0 og 1</p>
+    <input type="number" id="tal"/>
+    <button>tjek tal</button>
+    
+    <script>
+        document.querySelector("button").addEventListener("click",tjekTal);
+        let forsoeg = 0;
+        const ranNum = math.floor(Math.random()*11);
+        console.log(ranNum);
+
+function tjekTal(){
+    forsoeg++;
+    const brugerTal = document.querySelector("#tal").value;
+    console.log(brugerTal);
+
+    if (ranNum > brugerTal){
+alert("øv" + brugerTal + "for lavt");
+console.log(ranNum, brugerTal);
+}
+
+else if (ranNum < brugerTal){
+alert("øv" + brugerTal + "for højt");
+console.log(ranNum, brugerTal);
+}
+
+else {
+alert("ja tak, de brugte" + forsoeg + "forsøg");
+console.log("du gættede rigtigt");
+location.reload();
+}
+}
+ </script>
+</body>
+</html>
