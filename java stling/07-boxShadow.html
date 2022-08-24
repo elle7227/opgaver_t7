@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+    }
+
+    main {
+        width: 80vw;
+        margin: 0 auto;
+    }
+
+    section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        grid-gap: 20px;
+    }
+    article {
+        border: 1px solid #333;
+    }
+
+    img {
+        width: 100%;
+    }
+    h1,footer {
+        text-align: center;
+    }
+    header,footer {
+        padding: 10px 0;
+    }
+    section img {
+        cursor: pointer;
+    }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Titel</h1>
+    </header>
+    <main>
+        <h2>Undertitel</h2>
+
+        <section>
+            <article>
+                <img src="https://placeimg.com/400/300/arch" alt="" class="first">
+                <h3>Article 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, assumenda tenetur iste reiciendis omnis, optio amet velit quibusdam earum ad hic porro obcaecati incidunt eum cumque commodi accusamus rerum laborum.</p>
+            </article>
+            <article>
+                <img src="https://placeimg.com/400/300/any" alt="">
+                <h3>Article 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, assumenda tenetur iste reiciendis omnis, optio amet velit quibusdam earum ad hic porro obcaecati incidunt eum cumque commodi accusamus rerum laborum.</p>
+            </article>
+        </section>
+    </main>
+    <footer>This is the footer</footer>
+
+<script>
+ const article1 = document.querySelector("article:nth-child(1)");
+ const article2 = document.querySelector("article:nth-child(2)");
+ const title = document.querySelector("header h1");
+ let img1 = document.querySelector("article:nth-child(1) img");
+ let img2 = document.querySelector("article:nth-child(2) img");
+ const article1Heading = document.querySelector("article:nth-child(1) h3");
+ const article1Content = document.querySelector("article:nth-child(1) p");
+ const article2Heading = document.querySelector("article:nth-child(1) h3");
+ const article2Content = document.querySelector("article:nth-child(1) p");
+ 
+ document.addEventListener("DOMContentLoaded", start);
+
+    function start() {
+        title.textContent = "Billeder";
+        article1Heading.textContent = "Artcle1 ";
+        article1Content.textContent = "Bygninger skaber rum";
+        article1.style.boxShadow = "10px 20px 30px red";
+        article2.style.boxShadow = "10px 20px 30px red";
+        article1.addEventListener("mouseover",fjernShadow);
+        article2.addEventListener("mouseover",fjernShadow);
+        article1.addEventListener("mouseout",tilføjShadow);
+        article2.addEventListener("mouseout",tilføjShadow);
+    }
+    function fjernShadow() {
+        this.style.boxShadow = " none";  
+    }
+    function tilføjShadow() {
+        this.style.boxShadow =  "10px 20px 30px red";
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -16,17 +16,22 @@
 
     
 <script>
-document.querySelector("#cola");
-document.querySelector("#fanta");
-document.querySelector("#øl");
-document.querySelector("#snaps");
 
-document.querySelector("#cola").addEventListener("click",funktionDerKaldesVedKlik);
-document.querySelector("#fanta").addEventListener("click",funktionDerKaldesVedKlik);
-document.querySelector("#øl").addEventListener("click",funktionDerKaldesVedKlik);
-document.querySelector("#snaps").addEventListener("click",funktionDerKaldesVedKlik);
+    //jeg har lavet en const på snaps, men ikke på den andre, begge dele virker)
+    const snaps = document.querySelector("#snaps");
+    snaps.addEventListener("click",funktionDerKaldesVedKlik);
 
-function funktionDerKaldesVedKlik(){
+    document.querySelector("#cola");
+    document.querySelector("#fanta");
+    document.querySelector("#øl");
+    document.querySelector("#snaps");
+
+    document.querySelector("#cola").addEventListener("click",funktionDerKaldesVedKlik);
+    document.querySelector("#fanta").addEventListener("click",funktionDerKaldesVedKlik);
+    document.querySelector("#øl").addEventListener("click",funktionDerKaldesVedKlik);
+    snaps.addEventListener("click",funktionDerKaldesVedKlik);
+
+    function funktionDerKaldesVedKlik(){
     console.log(this.alt);
 
     if (this.alt == "snaps" || this.alt == "øl"){
