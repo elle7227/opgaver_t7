@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 biler</title>
+</head>
+<body>
+    <h1>Alle Biler</h1>
+    <main></main>
+  
+  
+<template>
+    <article>
+        <h2 class="mærke"></h2>
+        <h3 class="model"></h2>
+        <p class="motor"></p>
+        <p class="km"></p>
+        <p>udstyr:</p>
+        <ul class="udstyrliste"></ul>
+
+    </article>
+</template>    
+</body>    
+
+
+<script>
+      "use strict";
+      const fil = "biler.json"
+
+        async function hentdata(fil){
+          const resultat = await fetch(fil);
+          const json = await resultat.json();
+          vis(json);
+        }
+
+        function vis(json){
+            const beholder=document.querySelector("main");
+            const skabelon=document.querySelector("template");
+
+          json.forEach(bil =>{
+              const klon = skabelon.cloneNode(true).content;
+              klon.querySelector(".mærke").textContent = bil.mærke;
+              klon.querySelector(".model").textContent = bil.model;
+              klon.querySelector(".motor").textContent = bil.motor;
+              klon.querySelector(".km").textContent = bil.km;
+              bil.udstyr.forEach(udstyr=>{
+                  klon.querySelector(".udstyrliste").innerHTML += "<li>" + udstyr + "</li>"
+              })
+              beholder.appendChild(klon);
+                      });
+        }
+        hentdata(fil);
+</script>
+</body>

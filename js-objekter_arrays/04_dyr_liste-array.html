@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<section id="liste">
+</section>        
+
+<script>
+        document.addEventListener("DOMContentLoaded",start);
+
+        let zoo = [
+            {"type": "gris", "levested": "dk", "billede":"http://mabe-kea.dk/E19/pics/pig.png"},
+            {"type": "frø", "levested": "australien", "billede":"http://mabe-kea.dk/E19/pics/pig.png"},
+            {"type": "sild", "levested": "asien", "billede":"http://mabe-kea.dk/E19/pics/pig.png"},
+            {"type": "elefant", "levested": "serbien", "billede":"http://mabe-kea.dk/E19/pics/pig.png"},
+            {"type": "krokodille", "levested": "holland", "billede":"http://mabe-kea.dk/E19/pics/pig.png"},
+        ];
+        function start(){
+            const listeVisning =document.querySelector("#liste");
+            zoo.forEach(dyr=>{
+                listeVisning.innerHTML+=`<p>${dyr.type} ${dyr.levested} ${dyr.billede}</p>`
+            })
+        }
+</script>
+</body>
+
